@@ -1,4 +1,4 @@
-import { Home } from "../pages";
+import { Home, PageNotFound } from "../pages";
 
 const routes = [
   {
@@ -6,6 +6,10 @@ const routes = [
     path: "/",
     component: Home,
     key: "home"
+  },
+  {
+  	component: PageNotFound,
+  	key: '404'
   }
 ];
 
