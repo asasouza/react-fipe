@@ -1,4 +1,5 @@
 // modules
+import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import Select from 'react-select';
 
@@ -89,6 +90,58 @@ class SelectForm extends PureComponent {
 			</form>
 		);
 	}
+}
+
+SelectForm.propTypes = {
+	brand: PropTypes.shape({ label: PropTypes.string, value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
+	brandList: PropTypes.oneOfType([
+		PropTypes.arrayOf(
+			PropTypes.shape({ 
+				label: PropTypes.string, 
+				value: PropTypes.oneOfType([
+					PropTypes.number, PropTypes.string
+				]) 
+			})
+		),
+		PropTypes.string
+	]),
+	changeVehicleData: PropTypes.func.isRequired,
+	model: PropTypes.shape({ label: PropTypes.string, value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
+	modelList: PropTypes.oneOfType([
+		PropTypes.arrayOf(
+			PropTypes.shape({ 
+				label: PropTypes.string, 
+				value: PropTypes.oneOfType([
+					PropTypes.number, PropTypes.string
+				]) 
+			})
+		),
+		PropTypes.string
+	]),
+	type: PropTypes.shape({ label: PropTypes.string, value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
+	typeList: PropTypes.oneOfType([
+		PropTypes.arrayOf(
+			PropTypes.shape({ 
+				label: PropTypes.string, 
+				value: PropTypes.oneOfType([
+					PropTypes.number, PropTypes.string
+				]) 
+			})
+		),
+		PropTypes.string
+	]),
+	year: PropTypes.shape({ label: PropTypes.string, value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
+	yearList: PropTypes.oneOfType([
+		PropTypes.arrayOf(
+			PropTypes.shape({ 
+				label: PropTypes.string, 
+				value: PropTypes.oneOfType([
+					PropTypes.number, PropTypes.string
+				]) 
+			})
+		),
+		PropTypes.string
+	]),
 }
 
 export default SelectForm;

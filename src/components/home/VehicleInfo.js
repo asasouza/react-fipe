@@ -1,4 +1,5 @@
 // modules
+import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCar, faMotorcycle, faTruck } from '@fortawesome/free-solid-svg-icons'
@@ -98,6 +99,23 @@ class VehicleInfo extends PureComponent {
 			</div>
 		);
 	}
+}
+
+
+VehicleInfo.propTypes = {
+	brand: PropTypes.shape({ label: PropTypes.string, value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
+	fipeInfo: PropTypes.oneOfType([
+		PropTypes.shape({
+			Valor: PropTypes.string.isRequired,
+			MesReferencia: PropTypes.string.isRequired,
+			CodigoFipe: PropTypes.string.isRequired,
+			Combustivel: PropTypes.string.isRequired
+		}),
+		PropTypes.string
+	]),
+	model: PropTypes.shape({ label: PropTypes.string, value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
+	type: PropTypes.shape({ label: PropTypes.string, value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
+	year: PropTypes.shape({ label: PropTypes.string, value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]) }),
 }
 
 export default VehicleInfo;
