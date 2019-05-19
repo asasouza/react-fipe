@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# React FIPE - Alex Sandro A. Souza @asasouza
 
-In the project directory, you can run:
+## Configurando o ambiente de desenvolvimento
+1. Acesse o repositório do projeto hospedado no <a href='https://github.com/asasouza/react-fipe'>Github</a> e clone-o para o diretório desejada através do comando <code>git clone https://github.com/asasouza/react-fipe.git</code>.
+	- Obs: Caso opte por não realizar a operação anterior pelo <i>git</i> é possível realizar o download do projeto no formato <i>.zip</i> e descompacta-lo no diretório de preferência.
+2. Com o prompt de comando de seu sistema operacional, vá a pasta onde o projeto foi salvo e execute o comando <code>npm install</code>. Este comando instalará todas as dependências listadas na aplicação.
+	- Caso não possua, é necessária a instalação do npm, disponível através deste <a href="https://www.npmjs.com/get-npm">link</a>
+3. Com as dependências instaladas, execute o comando <code>npm start</code> dentro do diretório do projeto. Isto deve iniciar um servidor local de testes da aplicação. Assim abra o navegador no endereço <code>localhost:3000</code> e teste-a.
 
-### `npm start`
+## Estrutura de arquivos
+A aplicação é divida na seguinte hierarquia de diretórios:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+	|-src
+		|- components
+			|- common
+			|- home
+		|- config
+			|- routes.js
+		|- pages
+		|- providers
+		|- stores
+		App.js
+		index.js
+		index.css
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Os dados para teste e exibição foram todos coletados da API publica <a href="http://deividfortuna.github.io/fipe/">FIPE API HTTP REST</a>.
 
-### `npm test`
+## Gerando arquivos de produção
+Para gerar os arquivos de produção é necessário executar no diretório do projeto o comando <code>npm run build</code>. Este gerará a pasta contendo toda o código unificado e minificado da aplicação e importará as imagens, fontes e css necessários e utilizados pela aplicação.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologias
+Foram utilizadas as seguintes tecnologias para desenvolvimento desta aplicação de teste:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+		- React JS;
+		- Mobx + Mobx React;
+		- React Router DOM;
+		- Create React App
+		- Javascript ES6 + Babel;
+		- Bootstrap 4;
+		- HTML + CSS;
+		- ESLint;
