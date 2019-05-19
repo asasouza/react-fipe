@@ -15,9 +15,9 @@ class VehicleStore {
 		this.year = null;
 		this.fipeInfo = null;
 		this.typeList = [
-			{ label: 'Carros', value: 'carros'}, 
-			{ label: 'Motocicletas', value: 'motos' }, 
-			{ label: 'Caminhões', value: 'caminhoes' }
+			{ label: 'Carro', value: 'carros'}, 
+			{ label: 'Motocicleta', value: 'motos' }, 
+			{ label: 'Caminhão', value: 'caminhoes' }
 		];
 		this.brandList = [];
 		this.modelList = [];
@@ -82,7 +82,7 @@ class VehicleStore {
 
 	_onChangeYear = () => {
 		this._resetData(['fipeInfo']);
-		// this.fipeInfo = 'loading';
+		this.fipeInfo = 'loading';
 		RequestProvider.get(`${this.type.value}/marcas/${this.brand.value}/modelos/${this.model.value}/anos/${this.year.value}`)
 		.then(response => {
 			runInAction(() => {
@@ -110,7 +110,7 @@ class VehicleStore {
 		progress += this.brand ? 25: 0;
 		progress += this.model ? 25: 0;
 		progress += this.year ? 25: 0;
-		return `${progress}%`;
+		return progress;
 	}
 }
 
