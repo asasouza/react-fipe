@@ -1,5 +1,5 @@
 // modules
-import { action, decorate, runInAction, observable } from 'mobx';
+import { action, computed, decorate, runInAction, observable } from 'mobx';
 // providers
 import RequestProvider from '../providers/RequestProvider';
 
@@ -82,7 +82,7 @@ class VehicleStore {
 
 	_onChangeYear = () => {
 		this._resetData(['fipeInfo']);
-		this.fipeInfo = 'loading';
+		// this.fipeInfo = 'loading';
 		RequestProvider.get(`${this.type.value}/marcas/${this.brand.value}/modelos/${this.model.value}/anos/${this.year.value}`)
 		.then(response => {
 			runInAction(() => {
@@ -102,6 +102,15 @@ class VehicleStore {
 			this[field] = null;
 			this[`${field}List`] = [];
 		});
+	}
+
+	get progress() {
+		let progress = 0;
+		progress += this.type ? 25: 0;
+		progress += this.brand ? 25: 0;
+		progress += this.model ? 25: 0;
+		progress += this.year ? 25: 0;
+		return `${progress}%`;
 	}
 }
 
@@ -123,5 +132,5 @@ export default decorate(VehicleStore, {
 	model: observable,
 	year: observable,
 	fipeInfo: observable,
-
+	progress: computed
 });
